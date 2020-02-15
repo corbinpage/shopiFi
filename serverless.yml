@@ -89,7 +89,14 @@ provider:
 #    - exclude-me-dir/**
 
 functions:
-
+  transferTokens:
+    handler: transferTokens.start
+    layers:
+      - {Ref: CommonLibsLambdaLayer}
+  cmpdMintcToken:
+    handler: cmpdMintcToken.start
+    layers:
+      - {Ref: CommonLibsLambdaLayer}
 
 layers:
   commonLibs:
